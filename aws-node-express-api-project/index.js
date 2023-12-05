@@ -38,7 +38,7 @@ app.get('/', (req, res) => {
 
 app.post('/upload', upload.single('file'), function (req, res) {
   const file = req.file.buffer; // File buffer from multer
-  const s3Key = uuidv4(); // Randomly generated file key
+  const s3Key = uuidv4() + ".png"; // Randomly generated file key
   const {caption, event_code} = req.body;
   
   
